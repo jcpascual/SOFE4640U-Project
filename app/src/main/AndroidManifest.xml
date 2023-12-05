@@ -17,6 +17,9 @@
         android:theme="@style/Theme.EscooterRental"
         tools:targetApi="31">
         <activity
+            android:name=".RegisterUserActivity"
+            android:exported="false" />
+        <activity
             android:name=".LocalVideoActivity"
             android:exported="false" />
         <activity

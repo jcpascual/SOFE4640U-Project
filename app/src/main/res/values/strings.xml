@@ -14,6 +14,14 @@
     <string name="error_login_fail_text">Invalid username or password.</string>
     <string name="debug_error_login_success_text">Success</string>
 
+    <!-- Register -->
+    <string name="register_title">Register</string>
+    <string name="register">Register</string>
+    <string name="error_register_fail_title">Error</string>
+    <string name="error_register_fail_text">This user already exists.</string>
+    <string name="alert_register_success_title">Success</string>
+    <string name="alert_register_success_text">You have been registered successfully.</string>
+
     <!-- Scooter List -->
     <string name="scooter_list_fragment_label">Scooter List</string>
     <string name="error_qr_scanner_fail_text">Failed to start the QR code scanner. The resources may still be downloading. Try again in a few minutes.</string>

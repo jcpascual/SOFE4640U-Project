@@ -169,6 +169,27 @@ public class AppDatabaseHelper extends SQLiteOpenHelper {
         return user;
     }
 
+    public AppUser getAppUserWithUsername(String username) {
+        SQLiteDatabase db = getReadableDatabase();
+
+        // Query the database for the row with the specified ID.
+        Cursor cursor = db.query(USER_TABLE_NAME, new String[] { "id", "username", "password" }, "username = ?", new String[] { username }, null, null, null, null);
+
+        if (cursor == null || cursor.getCount() == 0) {
+            return null;
+        }
+
+        cursor.moveToFirst();
+
+        // Read the data.
+        AppUser user = getAppUserFromCursor(cursor);
+
+        cursor.close();
+        db.close();
+
+        return user;
+    }
+
     /*
 
     ========
