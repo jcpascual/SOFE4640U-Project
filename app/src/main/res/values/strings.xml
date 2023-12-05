@@ -18,7 +18,8 @@
     <string name="register_title">Register</string>
     <string name="register">Register</string>
     <string name="error_register_fail_title">Error</string>
-    <string name="error_register_fail_text">This user already exists.</string>
+    <string name="error_register_fail_empty_text">The username or password cannot be empty.</string>
+    <string name="error_register_fail_existing_text">This user already exists.</string>
     <string name="alert_register_success_title">Success</string>
     <string name="alert_register_success_text">You have been registered successfully.</string>
 

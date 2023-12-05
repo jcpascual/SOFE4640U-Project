@@ -46,13 +46,28 @@ public class RegisterUserActivity extends AppCompatActivity {
                 String username = binding.editTextUsernameRegister.getText().toString();
                 String password = binding.editTextPasswordRegister.getText().toString();
 
+                if (username.equals("") || password.equals("")) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+                    builder.setTitle(R.string.error_register_fail_title)
+                            .setMessage(R.string.error_register_fail_empty_text)
+                            .setPositiveButton(R.string.error_common_button_ok, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.dismiss();
+                                }
+                            });
+
+                    builder.show();
+
+                    return;
+                }
+
                 AppUser user = dbHelper.getAppUserWithUsername(username);
 
                 if (user != null) {
                     // The user already exists. Show an error.
                     AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
                     builder.setTitle(R.string.error_register_fail_title)
-                            .setMessage(R.string.error_register_fail_text)
+                            .setMessage(R.string.error_register_fail_existing_text)
                             .setPositiveButton(R.string.error_common_button_ok, new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     dialog.dismiss();
