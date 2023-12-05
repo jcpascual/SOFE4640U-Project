@@ -54,7 +54,7 @@ public class LocalVideoActivity extends AppCompatActivity {
                 // Switch between playing or paused as needed.
                 if (player.isPlaying()) {
                     binding.buttonControl.setText(R.string.local_video_button_play);
-                    player.stop();
+                    player.pause();
                 } else {
                     binding.buttonControl.setText(R.string.local_video_button_pause);
                     player.start();
